@@ -23,10 +23,17 @@ body {
     color: white;
     text-align: right;
     font-family: "Comic Sans MS", cursive, sans-serif;
+    padding: 10px;
 }
 
 .button {
   opacity: 0%;
   width: 120;
   height: 120;
+}
+
+.container{
+  float: right;
+  background-color: rgb(40,40,40);
+  padding: 10px;
 }
