@@ -3,13 +3,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="movement.js"></script>
+    <script src="script.js"></script>
     <title>HBD Lili</title>
     <script>
       var horiSteps = 500;
       var vertSteps = 500;
 
       function enterKeyPressed() {
-        if ((horiSteps = 150) && (vertSteps = 575)) {
+        if ((horiSteps === 125) || (horiSteps === 150) || (horiSteps === 175) && (vertSteps === 550) ||  (vertSteps === 575) ||  (vertSteps === 600)) {
             window.open( 'main.html', '_top');
         }
       }
@@ -41,7 +42,11 @@
         to interact with the map <br />
         ___________________
         <br /><br />
-        <audio src="music/index.mp3" controls></audio>
+
+        <audio controls autoplay loop id="playHome">
+          <source src="music/index.mp3" type="audio/mpeg">
+        </audio>
+
       </p>
     </div>
     <img

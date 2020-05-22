@@ -3,14 +3,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="movement.js"></script>
+    <script src="script.js"></script>
     <title>HBD Lili</title>
     <script>
       var horiSteps = 875;
       var vertSteps = 50;
       
       function enterKeyPressed() {
-        if ((horiSteps = 875) && (vertSteps = 50)) {
+        if ((horiSteps === 875) && (vertSteps === 50)) {
           window.open( 'index.html', '_top');
+        }
+        else if ((horiSteps === 975) || (horiSteps === 1000) || (horiSteps === 1025) && (vertSteps === 150) ||  (vertSteps === 175) ||  (vertSteps === 200)) {
+            window.open( 'beach1.html', '_top');
         }
       }
     </script>
@@ -32,7 +36,10 @@
             Use Enter key<br> to interact with the map <br>
             ___________________
             <br><br>
-            <audio src="music/main.mp3" controls></audio>
+            
+            <audio autoplay controls loop id="playAudio">
+              <source src="music/main.mp3" type="audio/mpeg">
+            </audio>
         </p>
     </div>
   <img class="avatar" src="img/bcaNodYes.gif" id="image1" style="position:absolute;left: 875px; top: 50px;">
