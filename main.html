@@ -1,48 +1,205 @@
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="movement.js"></script>
-    <script src="script.js"></script>
-    <title>HBD Lili</title>
-    <script>
-      var horiSteps = 875;
-      var vertSteps = 50;
-      
-      function enterKeyPressed() {
-        if ((horiSteps === 875) && (vertSteps === 50)) {
-          window.open( 'index.html', '_top');
-        }
-        else if ((horiSteps === 975) || (horiSteps === 1000) || (horiSteps === 1025) && (vertSteps === 150) ||  (vertSteps === 175) ||  (vertSteps === 200)) {
-            window.open( 'beach1.html', '_top');
-        }
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="movement.js"></script>
+  <script src="script.js"></script>
+  <title>HBD Lili</title>
+  <script>
+    var horiSteps = 875;
+    var vertSteps = 50;
+
+    function enterKeyPressed() {
+      if ((horiSteps === 875) && (vertSteps === 50)) {
+        window.open('index.html', '_top');
       }
-    </script>
-  </head>
-  <body onload="docReady()" onkeydown="" onkeyup="" style="background-image: url('img/farm.jpg')">
-    <div class="instructions">
-        <p>
-            ___________________<br> <br>
-            Happy Birthday Lili!
-            <br> <br>
-            ___________________
-            <br> <br>
-            Use arrow keys to <br>move around <br>
-            ___________________
-            <br><br>
-            The game has audio <br>
-            ___________________
-            <br><br>
-            Use Enter key<br> to interact with the map <br>
-            ___________________
-            <br><br>
-            
-            <audio autoplay controls loop id="playAudio">
-              <source src="music/main.mp3" type="audio/mpeg">
-            </audio>
-        </p>
-    </div>
+      else if (((horiSteps === 975) || (horiSteps === 1000) || (horiSteps === 1025)) && ((vertSteps === 150) || (vertSteps === 175) || (vertSteps === 200))) {
+        window.open('beach.html', '_top');
+      }
+      //spook
+      else if (((horiSteps === 325) || (horiSteps === 350) || (horiSteps === 300)) && ((vertSteps === 475) || (vertSteps === 500) || (vertSteps === 450))) {
+        $('spookModal').modal('show');
+        console.log('spook');
+      }
+      //nano
+      else if (((horiSteps === 325) || (horiSteps === 350) || (horiSteps === 300)) && ((vertSteps === 225) || (vertSteps === 200) || (vertSteps === 175))) {
+        $("nanoModal").modal("show");
+        console.log('nano');
+      }
+      //terasu
+      else if (((horiSteps === 550) || (horiSteps === 525) || (horiSteps === 575)) && ((vertSteps === 225) || (vertSteps === 200) || (vertSteps === 250))) {
+        $("teraModal").modal("show");
+        console.log('tera');
+      }
+      //kiri
+      else if (((horiSteps === 800) || (horiSteps === 775) || (horiSteps === 825)) && ((vertSteps === 150) || (vertSteps === 175) || (vertSteps === 125))) {
+        $("kiriModal").modal("show");
+        console.log('kiri');
+      }
+    }
+  </script>
+</head>
+
+<body onload="docReady()" onkeydown="" onkeyup="" style="background-image: url('img/farm.jpg')">
+  <div class="instructions">
+    <p>
+      ___________________<br> <br>
+      Happy Birthday Lili!
+      <br> <br>
+      ___________________
+      <br> <br>
+      Use arrow keys to <br>move around <br>
+      ___________________
+      <br><br>
+      The game has audio <br>
+      ___________________
+      <br><br>
+      Use Enter key<br> to interact with the map <br>
+      ___________________
+      <br><br>
+
+      <audio autoplay controls loop id="playAudio">
+        <source src="music/main.mp3" type="audio/mpeg">
+      </audio>
+    </p>
+  </div>
   <img class="avatar" src="img/bcaNodYes.gif" id="image1" style="position:absolute;left: 875px; top: 50px;">
 
-  </body>
+
+  <!-- -------------------- notif for spook's ------------------- -->
+
+  <button id="spookModal" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#spookModal">spook
+    <!-- <a href="https://drive.google.com/file/d/1bTt9z6YMHg_hmo6pAa8L4Qi1lfFy4lyB/view?usp=sharing"> -->
+      <img class="exclamation" src="img/notif.png" id="notifSpook"
+        style="opacity: 100%; position: absolute; left: 320; top: 480; width: 60px; height: 60px;" />
+    <!-- </a> -->
+  </button>
+
+  <div id="spookModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">spookghetti</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            hi lili!! <br /> <br />
+            although i've just entered the astral group recently, i'd like to wish you a happy birthday!! 
+            ^o^ you seem like such a fun person, and i look forward to getting to know you better from here on out.
+             i drew you a little something - i didn't have much time because of other work but i hope you 
+             like it regardless ;w; i had no idea what you look like (kiri told me you have black hair haha) 
+             so i just drew a random girl with a lilipad on her head :p
+            <br /> <br />
+            but yeah!! treat yo self and enjoy your day, despite quarantine being kinda poopy
+            <br /> <br />
+            - spook
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- -------------------- notif for nano's ------------------- -->
+
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#nanoModal">nano
+    <a href="https://cdn.discordapp.com/attachments/707815809078263848/708615663761096714/gift.png">
+      <img class="exclamation" src="img/notif.png" id="notifNano"
+        style="opacity: 100%; position: absolute; left: 325; top: 200; width: 60px; height: 60px;" />
+    </a>
+  </button>
+
+  <div id="nanoModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">nano.exe</h4>
+        </div>
+        <div class="modal-body">
+          <p>happy birthday lili :3c see you at the ghibli theme park.</p>
+          <img src="img/nano.png" style="align-content: center;" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- --------------------- notif for terasu's ---------------------------- -->
+
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#teraModal">tera
+  <a href="">
+    <img class="bcaNodYes" src="img/bcaNodYes.gif" id="tewatwat"
+      style="opacity: 100%; position: absolute; left: 550; top: 225; width: 45px; height: 45px;" />
+  </a>
+  </button>
+
+  <div id="teraModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Terasu nii-chan</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            <italic>Terasu put this here. </italic> happy birthdy btw
+          </p>
+          <img src="img/tewatwat.png" style="align-content: center;" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- tiptoe's -->
+  <a href="https://drive.google.com/file/d/1bTt9z6YMHg_hmo6pAa8L4Qi1lfFy4lyB/view?usp=sharing">
+    <img class="exclamation" src="img/notif.png" id="notifTip"
+      style="opacity: 100%; position: absolute; left: 320; top: 480; width: 60px; height: 60px;" />
+  </a>
+
+   <!-- -------------------- notif for kiri's ------------------- -->
+
+   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#kiriModal">kiri
+    <a href="">
+      <img class="exclamation" src="img/notif.png" id="notifKiri"
+        style="opacity: 100%; position: absolute; left: 800; top: 150; width: 60px; height: 60px;" />
+    </a>
+  </button>
+  <div id="kiriModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">nano.exe</h4>
+        </div>
+        <div class="modal-body">
+          <p>happy birthday lili :3c see you at the ghibli theme park.</p>
+          <img src="img/nano.png" style="align-content: center;" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
