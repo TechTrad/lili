@@ -1,100 +1,130 @@
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="movement.js"></script>
-    <script src="script.js"></script>
-    <title>HBD Lili</title>
-    <script>
-      var horiSteps = 550;
-      var vertSteps = 25;
 
-      function enterKeyPressed() {
-        if (horiSteps === 550 && vertSteps === 25) {
-          window.open("main.html", "_top");
-        } else if (((horiSteps === 0) || (horiSteps === 25)) && ((vertSteps === 200) || (vertSteps === 225))) {
-          document.body.style.backgroundImage = "url('img/beach2.jpg')";
-          document.body.style.backgroundSize = "858px 767px";
-        } else if (((horiSteps === 450) || (horiSteps === 475) || (horiSteps === 500)) && ((vertSteps === 450) || (vertSteps === 475))) {
-          let notif = document.getElementById("notif");
-          let alsvideo = document.getElementById("als");
-          let avatar = document.getElementById("image1");
-          let bg = document.getElementById("playBeach");
-          notif.play();
-          setTimeout(() => {document.getElementById("notifImg").style.opacity = 100;}, 300);
-          document.getElementById("instructions").style.opacity = 100;
-          setTimeout(() => {document.getElementById("notifImg").style.opacity = 0;}, 2500);
-          setTimeout(() => { alsvideo.style.opacity = 100; alsvideo.play();}, 3500);
-          setTimeout(() => {avatar.style.opacity = 0;}, 3500);
-          setTimeout(() => {bg.pause();}, 3000);
-          setTimeout(() => {document.body.style.backgroundColor = "black";}, 3400);
-          setTimeout(() => {document.body.style.backgroundImage = "";}, 3350);
-        }
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="movement.js"></script>
+  <script src="script.js"></script>
+  <title>HBD Lili</title>
+  <script>
+    var horiSteps = 550;
+    var vertSteps = 25;
+
+    function enterKeyPressed() {
+      if (horiSteps === 550 && vertSteps === 25) {
+        window.open("main.html", "_top");
+      } else if (((horiSteps === 0) || (horiSteps === 25)) && ((vertSteps === 200) || (vertSteps === 225))) {
+        document.body.style.backgroundImage = "url('img/beach2.jpg')";
+        document.body.style.backgroundSize = "858px 767px";
+      } else if (((horiSteps === 450) || (horiSteps === 475) || (horiSteps === 500)) && ((vertSteps === 450) || (vertSteps === 475))) {
+        let notif = document.getElementById("notif");
+        let alsvideo = document.getElementById("als");
+        let avatar = document.getElementById("image1");
+        let bg = document.getElementById("playBeach");
+        notif.play();
+        setTimeout(() => { document.getElementById("notifImg").style.opacity = 100; }, 300);
+        document.getElementById("instructions").style.opacity = 100;
+        setTimeout(() => { document.getElementById("notifImg").style.opacity = 0; }, 2500);
+        setTimeout(() => { alsvideo.style.opacity = 100; alsvideo.play(); }, 3500);
+        setTimeout(() => { avatar.style.opacity = 0; }, 3500);
+        setTimeout(() => { bg.pause(); }, 3000);
+        setTimeout(() => { document.body.style.backgroundColor = "black"; }, 3400);
+        setTimeout(() => { document.body.style.backgroundImage = ""; }, 3350);
+      } else if (((horiSteps === 225) || (horiSteps === 200) || (horiSteps === 175)) && ((vertSteps === 425) || (vertSteps === 450) || (vertSteps === 475))) {
+        $("#doorModal").modal("show");
+        console.log('door');
       }
-    </script>
-  </head>
-  <body
-    onload="docReady()"
-    onkeydown=""
-    onkeyup=""
-    style="
+    }
+  </script>
+</head>
+
+<body onload="docReady()" onkeydown="" onkeyup="" style="
       background-image: url('img/beach1.jpg');
       background-size: 944px 767px;
-    "
-  >
-    <div class="instructions">
-      <p>
-        ___________________
-        <br />
-        <br />
-        Happy Birthday Lili!
-        <br />
-        <br />
-        ___________________
-        <br />
-        <br />
-        Use arrow keys to <br />move around <br />
-        ___________________
-        <br />
-        <br />
-        The game has audio <br />
-        ___________________
-        <br />
-        <br />
-        Use Enter key<br />
-        to interact with the map <br />
-        ___________________
-        <br />
-        <br />
-        <div id="instructions" style="opacity: 0;">
-          If the video doesnt work, <br /> press the notification icon 
-        </div>
-        <br /><br />
-        <audio autoplay controls loop id="playBeach" src="music/beach.mp3" type="audio/mpeg">
-        </audio>
-      </p>
+    ">
+  <div class="instructions">
+    <p>
+      ___________________
+      <br />
+      <br />
+      Happy Birthday Lili!
+      <br />
+      <br />
+      ___________________
+      <br />
+      <br />
+      Use arrow keys to <br />move around <br />
+      ___________________
+      <br />
+      <br />
+      The game has audio <br />
+      ___________________
+      <br />
+      <br />
+      Use Enter key<br />
+      to interact with the map <br />
+      ___________________
+      <br />
+      <br />
+    <div id="instructions" style="opacity: 0;">
+      If the video doesnt work, <br /> press the notification icon
     </div>
-    <img class="avatar" src="img/bcaNodYes.gif" id="image1" style="position: absolute; left: 550; top: 25;"/>
+    <br /><br />
+    <audio autoplay controls loop id="playBeach" src="music/beach.mp3" type="audio/mpeg">
+    </audio>
+    </p>
+  </div>
+  <img class="avatar" src="img/bcaNodYes.gif" id="image1" style="position: absolute; left: 550; top: 25;" />
 
-    <!-- notif to start video -->
-    <a href="https://drive.google.com/open?id=1CEWcGTb692_EFP8uNVOzNfqg9vjJjSg6">
-      <img class="exclamation" src="img/notif.png" id="notifImg" style="opacity: 0%; position: absolute; left: 190; top: 380; width: 60px; height: 60px;"/>
+  <!-- notif to start video -->
+  <a href="https://drive.google.com/open?id=1CEWcGTb692_EFP8uNVOzNfqg9vjJjSg6">
+    <img class="exclamation" src="img/notif.png" id="notifImg"
+      style="opacity: 0%; position: absolute; left: 190; top: 380; width: 60px; height: 60px;" />
+  </a>
+
+  <div id="als-container" style="margin: 0 auto; text-align: center;">
+    <video id="als" style="opacity: 0; margin-top: 70px; margin-left: 170px;">
+      <source src="img/ALittleSunshine.mp4" type='video/mp4'>
+    </video>
+  </div>
+  <audio src="music/notif.mp3" style="display: false;" id="notif"></audio>
+
+  <!-- door -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#doorModal">door
+    <a href="">
+      <img class="fossil" src="img/fossil.png" id="door"
+        style="opacity: 0%; position: absolute; left: 50; top: 230; width: 75px; height: 60px;" />
     </a>
+  </button>
 
-    <div id="als-container" style="margin: 0 auto; text-align: center;">
-      <video id="als" style="opacity: 0; margin-top: 70px; margin-left: 170px;">
-        <source src="img/ALittleSunshine.mp4" type='video/mp4'>
-      </video>
+  <div id="doorModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">TipToe</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            <italic>The door seems to be locked... but you hear people moving about inside...</italic>
+            <bold>Feeling lonely, you sit on the bench to contemplate the past #^% years of your existence</bold>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
-    <audio src="music/notif.mp3" style="display: false;" id="notif"></audio>
+  </div>
 
-    <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   </body>
+
 </html>
