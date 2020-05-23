@@ -3,12 +3,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="movement.js"></script>
   <script src="script.js"></script>
@@ -26,23 +22,27 @@
       }
       //spook
       else if (((horiSteps === 325) || (horiSteps === 350) || (horiSteps === 300)) && ((vertSteps === 475) || (vertSteps === 500) || (vertSteps === 450))) {
-        $('spookModal').modal('show');
+        $('#spookModal').modal('show');
         console.log('spook');
+        document.getElementById("notifSpook").style.opacity = 0;
       }
       //nano
       else if (((horiSteps === 325) || (horiSteps === 350) || (horiSteps === 300)) && ((vertSteps === 225) || (vertSteps === 200) || (vertSteps === 175))) {
-        $("nanoModal").modal("show");
+        $("#nanoModal").modal("show");
         console.log('nano');
+        document.getElementById("notifNano").style.opacity = 0;
       }
       //terasu
       else if (((horiSteps === 550) || (horiSteps === 525) || (horiSteps === 575)) && ((vertSteps === 225) || (vertSteps === 200) || (vertSteps === 250))) {
-        $("teraModal").modal("show");
+        $("#teraModal").modal("show");
         console.log('tera');
+        document.getElementById("tewatwat").style.opacity = 0;
       }
       //kiri
       else if (((horiSteps === 800) || (horiSteps === 775) || (horiSteps === 825)) && ((vertSteps === 150) || (vertSteps === 175) || (vertSteps === 125))) {
-        $("kiriModal").modal("show");
+        $("#kiriModal").modal("show");
         console.log('kiri');
+        document.getElementById("notifKiri").style.opacity = 0;
       }
     }
   </script>
@@ -76,22 +76,23 @@
 
   <!-- -------------------- notif for spook's ------------------- -->
 
-  <button id="spookModal" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#spookModal">spook
-    <!-- <a href="https://drive.google.com/file/d/1bTt9z6YMHg_hmo6pAa8L4Qi1lfFy4lyB/view?usp=sharing"> -->
+  
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#spookModal">spook
+    <a href="https://cdn.discordapp.com/attachments/707815809078263848/708615663761096714/gift.png">
       <img class="exclamation" src="img/notif.png" id="notifSpook"
-        style="opacity: 100%; position: absolute; left: 320; top: 480; width: 60px; height: 60px;" />
-    <!-- </a> -->
+        style="opacity: 100%; position: absolute; left: 325; top: 200; width: 60px; height: 60px;" />
+    </a>
   </button>
 
   <div id="spookModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
+    <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">spookghetti</h4>
         </div>
         <div class="modal-body">
+          <img src="img/spook.gif" style="align-content: center; max-height: auto; width: 100%;" />
           <p>
             hi lili!! <br /> <br />
             although i've just entered the astral group recently, i'd like to wish you a happy birthday!! 
@@ -112,6 +113,8 @@
     </div>
   </div>
 
+
+  
   <!-- -------------------- notif for nano's ------------------- -->
 
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#nanoModal">nano
@@ -122,15 +125,15 @@
   </button>
 
   <div id="nanoModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">nano.exe</h4>
         </div>
         <div class="modal-body">
+          <img src="img/nano.png" style="align-content: center; max-height: auto; width: 100%;" />
           <p>happy birthday lili :3c see you at the ghibli theme park.</p>
-          <img src="img/nano.png" style="align-content: center;" />
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -149,7 +152,7 @@
   </button>
 
   <div id="teraModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -168,31 +171,28 @@
     </div>
   </div>
 
-
-  <!-- tiptoe's -->
-  <a href="https://drive.google.com/file/d/1bTt9z6YMHg_hmo6pAa8L4Qi1lfFy4lyB/view?usp=sharing">
-    <img class="exclamation" src="img/notif.png" id="notifTip"
-      style="opacity: 100%; position: absolute; left: 320; top: 480; width: 60px; height: 60px;" />
-  </a>
-
    <!-- -------------------- notif for kiri's ------------------- -->
 
    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#kiriModal">kiri
-    <a href="">
+    <a href="https://drive.google.com/open?id=1IHdoQ_qdjWgrIMJQXyGX7NcQlg9lgIaM">
       <img class="exclamation" src="img/notif.png" id="notifKiri"
         style="opacity: 100%; position: absolute; left: 800; top: 150; width: 60px; height: 60px;" />
     </a>
   </button>
   <div id="kiriModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">nano.exe</h4>
+          <h4 class="modal-title">Kiriyume</h4>
         </div>
         <div class="modal-body">
-          <p>happy birthday lili :3c see you at the ghibli theme park.</p>
-          <img src="img/nano.png" style="align-content: center;" />
+          <p>
+            Dear Lily, <br /> <br />
+            Happy 18th Birthday!! Hope you have a great day~ Here a smol gift :D <br /> <br />
+            - Kiri &lt;3 <br /> <br />
+          </p>
+          <button type="button" class="btn btn-light"><a href="https://drive.google.com/open?id=1IHdoQ_qdjWgrIMJQXyGX7NcQlg9lgIaM">Gift</a></button>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -200,6 +200,10 @@
       </div>
     </div>
   </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -1,73 +1,136 @@
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="movement.js"></script>
-    <script src="script.js"></script>
-    <title>HBD Lili</title>
-    <script>
-      var horiSteps = 500;
-      var vertSteps = 500;
 
-      function enterKeyPressed() {
-        if ((horiSteps === 125) || (horiSteps === 150) || (horiSteps === 175) && (vertSteps === 550) ||  (vertSteps === 575) ||  (vertSteps === 600)) {
-            window.open( 'main.html', '_top');
-        }
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="movement.js"></script>
+  <script src="script.js"></script>
+  <title>HBD Lili</title>
+  <script>
+    var horiSteps = 500;
+    var vertSteps = 500;
+
+    function enterKeyPressed() {
+      if (((horiSteps === 125) || (horiSteps === 150) || (horiSteps === 175)) && ((vertSteps === 550) || (vertSteps === 575) || (vertSteps === 600))) {
+        window.open('main.html', '_top');
       }
-    </script>
-  </head>
-  <body
-    onload="docReady()"
-    onkeydown=""
-    onkeyup=""
-    style="background-image: url('img/home.png');"
-  >
-    <div class="instructions">
-      <p>
-        ___________________<br />
-        <br />
-        Happy Birthday Lili!
-        <br />
-        <br />
-        ___________________
-        <br />
-        <br />
-        Use arrow keys to <br />move around <br />
-        ___________________
-        <br /><br />
-        The game has audio <br />
-        ___________________
-        <br /><br />
-        Use Enter Key<br />
-        to interact with the map <br />
-        ___________________
-        <br /><br />
+      //tiptoe
+      else if (((horiSteps === 300) || (horiSteps === 275) || (horiSteps === 250) || (horiSteps === 225) || (horiSteps === 200) || (horiSteps === 175) || (horiSteps === 150)) && ((vertSteps === 200) || (vertSteps === 225) || (vertSteps === 250) || (vertSteps === 275))) {
+        $("#tipModal").modal("show");
+        console.log('tiptoe');
+        document.getElementById("tiptoe").style.opacity = 0;
+      }
+      //Trad
+      else if (((horiSteps === 25) || (horiSteps === 50) || (horiSteps === 75)) && ((vertSteps === 200) || (vertSteps === 225) || (vertSteps === 250) || (vertSteps === 275))) {
+        $("#tradModal").modal("show");
+        console.log('trad');
+        document.getElementById("trad").style.opacity = 0;
+      }
+    }
+  </script>
+</head>
 
-        <audio controls autoplay loop id="playHome">
-          <source src="music/index.mp3" type="audio/mpeg">
-        </audio>
+<body onload="docReady()" onkeydown="" onkeyup="" style="background-image: url('img/home.png');">
+  <div class="instructions">
+    <p>
+      ___________________<br />
+      <br />
+      Happy Birthday Lili!
+      <br />
+      <br />
+      ___________________
+      <br />
+      <br />
+      Use arrow keys to <br />move around <br />
+      ___________________
+      <br /><br />
+      The game has audio <br />
+      ___________________
+      <br /><br />
+      Use Enter Key<br />
+      to interact with the map <br />
+      ___________________
+      <br /><br />
 
-      </p>
-    </div>
-    <img
-      class="avatar"
-      src="img/bcaNodYes.gif"
-      id="image1"
-      style="position: absolute; left: 500px; top: 500px;"
-    />
-    <a href="main.html">
-      <img
-        class="button"
-        src="img/button.png"
-        style="position: absolute; left: 128px; top: 600px;"
-      />
+      <audio controls autoplay loop id="playHome">
+        <source src="music/index.mp3" type="audio/mpeg">
+      </audio>
+
+    </p>
+  </div>
+  <img class="avatar" src="img/bcaNodYes.gif" id="image1" style="position: absolute; left: 500px; top: 500px;" />
+  <a href="main.html">
+    <img class="button" src="img/button.png" style="position: absolute; left: 128px; top: 600px;" />
+  </a>
+
+  <!-- tiptoe's -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#tipModal">Tip
+    <a href="">
+      <img class="cake" src="img/cake.png" id="tiptoe"
+        style="opacity: 100%; position: absolute; left: 220; top: 200; width: 75px; height: 75px;" />
     </a>
-  </body>
+  </button>
+
+  <div id="tipModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">TipToe</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            HAPPY BIRTHDAY <br /> FROM TIPTOE
+          </p>
+          <img src="img/tiptoe.jpg" style="align-content: center; max-width: 100%; height: auto;" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- trad's -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#tradModal">Trad
+      <a href="">
+        <img class="fossil" src="img/fossil.png" id="trad"
+          style="opacity: 100%; position: absolute; left: 50; top: 230; width: 75px; height: 60px;" />
+      </a>
+    </button>
+  
+    <div id="tipModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">TipToe</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              Here lies the fossil of DinoTrad...
+              <br /> <br />
+              Attached with it is a note <br/> <br/>
+              <span style="color: rgb(32, 30, 50); font-family: Comic Sans MS, cursive, sans-serif;">
+                Hope you have fun looking for everyone's gifts! We'll guide you along the way in case you miss any. HAPPY BIRTHDAY!!
+              </span>
+
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
 </html>
