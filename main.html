@@ -32,6 +32,12 @@
         console.log('nano');
         document.getElementById("notifNano").style.opacity = 0;
       }
+      //alter
+      else if (((horiSteps === 900) || (horiSteps === 875) || (horiSteps === 925)) && ((vertSteps === 500) || (vertSteps === 525) || (vertSteps === 475))) {
+        $("#alterModal").modal("show");
+        console.log('alter');
+        document.getElementById("notifAlter").style.opacity = 0;
+      }
       //terasu
       else if (((horiSteps === 550) || (horiSteps === 525) || (horiSteps === 575)) && ((vertSteps === 225) || (vertSteps === 200) || (vertSteps === 250))) {
         $("#teraModal").modal("show");
@@ -133,6 +139,33 @@
         <div class="modal-body">
           <img src="img/nano.png" style="align-content: center; max-height: auto; width: 100%;" />
           <p>happy birthday lili :3c see you at the ghibli theme park.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- -------------------- notif for alter's ------------------- -->
+
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#alterModal">alter
+    <a href="https://cdn.discordapp.com/attachments/706841526075916311/714025001048735794/lili.jpg">
+      <img class="exclamation" src="img/notif.png" id="notifAlter"
+        style="opacity: 100%; position: absolute; left: 900; top: 500; width: 60px; height: 60px;" />
+    </a>
+  </button>
+
+  <div id="alterModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">alter</h4>
+        </div>
+        <div class="modal-body">
+          <img src="img/alter.png" style="align-content: center; max-height: auto; width: 100%;" />
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
